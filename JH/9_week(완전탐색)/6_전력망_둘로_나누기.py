@@ -25,6 +25,3 @@ def solution(n, wires):
         print(L, R)
         answer = min(abs(len(L) - len(R)), answer)
     return answer
-
-if __name__ == "__main__":
-    print(min(3,3))
