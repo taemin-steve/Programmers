@@ -19,4 +19,4 @@ b = Data(3,1)
 q.put(a)
 q.put(b)
 
-print(q.get().a)
+print(q.get().b)
