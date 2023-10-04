@@ -45,20 +45,22 @@ for i in range(N):
 p_c = True
     
 for first, second, third in  combinations(range(len(space_0)),3):
-    new_m = copy.deepcopy(m)
-    new_m[space_0[first][0]][space_0[first][1]] = 1
-    new_m[space_0[second][0]][space_0[second][1]] = 1
-    new_m[space_0[third][0]][space_0[third][1]] = 1
+    m[space_0[first][0]][space_0[first][1]] = 1
+    m[space_0[second][0]][space_0[second][1]] = 1
+    m[space_0[third][0]][space_0[third][1]] = 1
     
     visited = [[0 for _ in range(M)] for _ in range(N)]
     count = 0
     for i in range(N):
         for j in range(M):
-            if new_m[i][j] == 2: ## 바이러스 먼저 Fooldfill 해주자
+            if m[i][j] == 2: ## 바이러스 먼저 Fooldfill 해주자
                 if visited[i][j] == 1: continue
                 visited[i][j] = 1
                 count += 1
-                DFS(i,j, new_m,visited)
+                DFS(i,j, m,visited)
     ans = max(ans, N*M - wall -3 - count)
+    m[space_0[first][0]][space_0[first][1]] = 0
+    m[space_0[second][0]][space_0[second][1]] = 0
+    m[space_0[third][0]][space_0[third][1]] = 0
     
 print(ans)
