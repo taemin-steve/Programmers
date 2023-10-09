@@ -40,4 +40,4 @@ dp[scv[0]][scv[1]][scv[2]] = 0
 mutal(scv[0], scv[1], scv[2])
 print(hits)
 
-## 추후에 다시 풀어보자 
+## 추후에 다시 풀어보자!
